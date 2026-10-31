@@ -1,0 +1,15 @@
+{
+  "name": "@itsoumya-d/mobbin-ui-compiler",
+  "version": "0.1.0",
+  "description": "Reference-driven UI compiler for Mobbin-style search_screens data.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": { ".": "./src/index.js" },
+  "bin": { "mobbin-compile": "./bin/mobbin-compile.mjs" },
+  "scripts": {
+    "compile": "node bin/mobbin-compile.mjs --surface all",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "license": "MIT"
+}
