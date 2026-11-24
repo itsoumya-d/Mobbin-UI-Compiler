@@ -2,6 +2,8 @@
 
 Generated from 2 reference metadata rows: Claude, Perplexity.
 
+Validation Score: 100%
+
 Rules:
 - Empty state offers suggested-question chips instead of a blank canvas.
 - Every answer citation is a button that opens the source drawer.
