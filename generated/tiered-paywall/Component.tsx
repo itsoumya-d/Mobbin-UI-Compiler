@@ -34,7 +34,7 @@ export function TieredPaywall() {
                 {tier.features.map((feature, index) => <li key={index}>{feature}</li>)}
               </ul>
               <p className="mt-6 text-xs text-[#6B655D]">One-time setup. Cancel anytime.</p>
-              <button type="button" className={tier.best ? "mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-2xl bg-[var(--primary)] px-5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--primary)] motion-reduce:transition-none" : "mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-2xl border border-[#D8D4CE] px-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--primary)] motion-reduce:transition-none"}>
+              <button type="button" aria-label={tier.cta} className={tier.best ? "mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-2xl bg-[var(--primary)] px-5 text-sm font-semibold text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--primary)] motion-reduce:transition-none" : "mt-3 inline-flex min-h-11 w-full items-center justify-center rounded-2xl border border-[#D8D4CE] px-5 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--primary)] motion-reduce:transition-none"}>
                 {tier.cta}
               </button>
             </section>

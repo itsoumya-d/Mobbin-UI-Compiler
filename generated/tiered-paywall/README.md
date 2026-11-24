@@ -2,6 +2,8 @@
 
 Generated from 2 reference metadata rows: Stripe, Revolut.
 
+Validation Score: 100%
+
 Rules:
 - Put the price inside the primary CTA and mark one column as best for you.
 - Use em dashes for unavailable free-tier features, not red X marks.
