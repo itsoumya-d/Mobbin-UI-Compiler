@@ -25,9 +25,9 @@ describe('Mobbin adapter contract', () => {
 });
 
 describe('surface compiler', () => {
-  test('compiles all five surfaces with boards and tokens', async () => {
+  test('compiles all six surfaces with boards and tokens', async () => {
     const { out, results } = await build();
-    assert.equal(results.length, 5);
+    assert.equal(results.length, 6);
     for (const result of results) {
       assert.ok(existsSync(join(out, result.slug, 'Component.tsx')));
       assert.ok(existsSync(join(out, result.slug, 'tokens.ts')));
@@ -77,6 +77,17 @@ describe('surface compiler', () => {
     assert.match(source, /Invoices/);
     assert.match(source, /Download/);
     assert.match(source, /Taxes included/);
+  });
+
+  test('telephony agent desktop includes SIP badge, call controls, and shortcuts', () => {
+    const source = readFileSync('generated/agent-desktop/Component.tsx', 'utf8');
+    assert.match(source, /Agent Telephony Desktop/);
+    assert.match(source, /SIP Trunk Healthy/);
+    assert.match(source, /Mute microphone/);
+    assert.match(source, /Disconnect/);
+    assert.match(source, /aria-live="polite"/);
+    assert.match(source, /min-h-11/);
+    assert.match(source, /focus-visible:ring-2/);
   });
 
   test('all generated components carry accessibility invariants', () => {

@@ -1,0 +1,51 @@
+{
+  "valid": true,
+  "score": 100,
+  "passedCount": 6,
+  "totalCount": 6,
+  "checks": [
+    {
+      "id": "a11y-focus-visible",
+      "name": "Visible keyboard focus ring",
+      "severity": "error",
+      "passed": true,
+      "message": "OK"
+    },
+    {
+      "id": "a11y-min-target-size",
+      "name": "Minimum touch target size (44px / h-11)",
+      "severity": "error",
+      "passed": true,
+      "message": "OK"
+    },
+    {
+      "id": "a11y-motion-reduce",
+      "name": "Prefers-reduced-motion compensation",
+      "severity": "error",
+      "passed": true,
+      "message": "OK"
+    },
+    {
+      "id": "a11y-aria-semantics",
+      "name": "ARIA attributes and semantic landmarks",
+      "severity": "error",
+      "passed": true,
+      "message": "OK"
+    },
+    {
+      "id": "a11y-screen-reader-text",
+      "name": "Screen-reader text accompaniment",
+      "severity": "warning",
+      "passed": true,
+      "message": "OK"
+    },
+    {
+      "id": "token-density-radius",
+      "name": "Design token conformance",
+      "severity": "error",
+      "passed": true,
+      "message": "OK"
+    }
+  ],
+  "violations": []
+}
