@@ -57,4 +57,15 @@ export const SURFACES = {
       "Never hide taxes or the next charge date in a tooltip only.",
     ],
   },
+  telephony: {
+    slug: "agent-desktop",
+    name: "Omnichannel Agent Telephony Desktop",
+    query: "contact center agent desktop telephony call controls sip status",
+    platform: "web",
+    rules: [
+      "Provide accessible call controls with explicit keyboard shortcuts and ARIA state labels.",
+      "Show live telephony connection status with clear text indicators alongside visual cues.",
+      "Include structured customer context and interaction timeline with tabbed navigation.",
+    ],
+  },
 };

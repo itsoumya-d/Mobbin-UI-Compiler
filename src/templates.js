@@ -249,12 +249,120 @@ export function UsageBillingLedger() {
 `;
 }
 
+function telephonyComponent(definition) {
+  return `${header(definition)}
+import * as React from "react";
+import { tokens } from "./tokens";
+
+export function AgentTelephonyDesktop() {
+  return (
+    <main className="min-h-screen bg-[#F4F5F7] px-4 py-8 text-[#172B4D]">
+      <div className="mx-auto max-w-4xl space-y-6">
+        <header className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[#DFE1E6] bg-white p-4 shadow-sm">
+          <div className="flex items-center gap-3">
+            <span className="flex h-3 w-3 rounded-full bg-emerald-500" aria-hidden="true" />
+            <div>
+              <h1 className="text-lg font-semibold tracking-tight">Agent Telephony Desktop</h1>
+              <p className="text-xs text-[#5E6C84]">Connected · SIP Trunk Healthy</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="rounded bg-[#EBECF0] px-2.5 py-1 text-xs font-medium text-[#42526E]">Queue: Tier-2 Enterprise</span>
+            <span className="rounded bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700">Status: In Call</span>
+          </div>
+        </header>
+
+        <section aria-label="Active call controls" aria-live="polite" className="rounded-xl border border-[#DFE1E6] bg-white p-6 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between border-b border-[#EBECF0] pb-4">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#5E6C84]">Active Session</p>
+              <h2 className="mt-1 text-xl font-bold">+1 (800) 555-0199</h2>
+              <p className="text-sm text-[#5E6C84]">Inbound Call from Acme Corp · Duration: 04:22</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label="Mute microphone"
+                className="min-h-11 rounded-lg border border-[#DFE1E6] bg-white px-4 py-2 text-sm font-medium hover:bg-[#F4F5F7] ${BASE}"
+              >
+                Mute microphone (⌥M)
+              </button>
+              <button
+                type="button"
+                aria-label="Hold call"
+                className="min-h-11 rounded-lg border border-[#DFE1E6] bg-white px-4 py-2 text-sm font-medium hover:bg-[#F4F5F7] ${BASE}"
+              >
+                Hold call (⌥H)
+              </button>
+              <button
+                type="button"
+                aria-label="Transfer call to queue"
+                className="min-h-11 rounded-lg border border-[#DFE1E6] bg-white px-4 py-2 text-sm font-medium hover:bg-[#F4F5F7] ${BASE}"
+              >
+                Transfer (⌥T)
+              </button>
+              <button
+                type="button"
+                aria-label="Disconnect active call"
+                className="min-h-11 rounded-lg bg-rose-600 px-4 py-2 text-sm font-medium text-white hover:bg-rose-700 ${BASE}"
+              >
+                Disconnect
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <section aria-labelledby="customer-profile">
+              <h3 id="customer-profile" className="text-sm font-semibold text-[#172B4D]">Customer Context</h3>
+              <dl className="mt-3 space-y-2 text-sm text-[#5E6C84]">
+                <div className="flex justify-between border-b border-[#EBECF0] py-1.5">
+                  <dt>Account Name</dt>
+                  <dd className="font-medium text-[#172B4D]">Acme Global Industries</dd>
+                </div>
+                <div className="flex justify-between border-b border-[#EBECF0] py-1.5">
+                  <dt>SLA Tier</dt>
+                  <dd className="font-semibold text-emerald-700">24/7 Mission Critical</dd>
+                </div>
+                <div className="flex justify-between border-b border-[#EBECF0] py-1.5">
+                  <dt>Open Tickets</dt>
+                  <dd className="font-medium text-[#172B4D]">2 unresolved</dd>
+                </div>
+              </dl>
+            </section>
+
+            <section aria-labelledby="telephony-diagnostics">
+              <h3 id="telephony-diagnostics" className="text-sm font-semibold text-[#172B4D]">SIP &amp; Media Quality</h3>
+              <ul className="mt-3 space-y-2 text-sm text-[#5E6C84]" role="list">
+                <li className="flex justify-between py-1">
+                  <span>Codec:</span>
+                  <span className="font-mono text-xs">G.711u / 64 kbps</span>
+                </li>
+                <li className="flex justify-between py-1">
+                  <span>Packet Jitter:</span>
+                  <span className="font-medium text-emerald-600">1.2 ms (Optimal)</span>
+                </li>
+                <li className="flex justify-between py-1">
+                  <span>Roundtrip Latency:</span>
+                  <span className="font-medium text-emerald-600">28 ms</span>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
+`;
+}
+
 export function renderComponent(key, definition, extracted) {
   if (key === "kyc") return kycComponent(definition);
   if (key === "paywall") return paywallComponent(definition);
   if (key === "dashboard") return dashboardComponent(definition);
   if (key === "chat") return chatComponent(definition);
   if (key === "billing") return billingComponent(definition);
+  if (key === "telephony") return telephonyComponent(definition);
   throw new Error(`unknown surface: ${key}`);
 }
 

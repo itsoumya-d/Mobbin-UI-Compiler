@@ -20,11 +20,12 @@ and emits React 19 + TypeScript + Tailwind component source.
 | Keyboard dashboard | `keyboard-dashboard/Component.tsx` | ⌘K hint, dense table, status text+color, evidence drawer |
 | Agentic chat | `agentic-chat/Component.tsx` | suggestion chips, citation drill-through, labelled composer |
 | Usage billing | `usage-billing/Component.tsx` | usage meter, invoice ledger, download actions, tax note |
+| Agent desktop | `agent-desktop/Component.tsx` | SIP trunk status badge, accessible call controls, live session timer, customer context |
 
 ## Commands
 
 ```bash
-npm run compile      # regenerate all five surfaces into generated/
+npm run compile      # regenerate all six surfaces into generated/
 npm test             # adapter + surface + accessibility invariant tests
 node bin/mobbin-compile.mjs --surface paywall --out generated
 ```
